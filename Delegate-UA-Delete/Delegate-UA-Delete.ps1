@@ -1,11 +1,11 @@
 ﻿Add-Type -AssemblyName System.DirectoryServices
 Add-Type -AssemblyName System.DirectoryServices.AccountManagement
 
-Function Delegate-UA-Reset-Password
+Function Delegate-UA-Delete
 {
     <#
         .SYNOPSIS
-            Delegates "Reset Password" permissions to an Active Directory role (group).
+            Delegates "Delete Child" permissions to an Active Directory role (group).
                   
         .PARAMETER role_name
             Name of the role (AD group) to which permissions are delegated.
@@ -17,14 +17,14 @@ Function Delegate-UA-Reset-Password
             Simulates changes without actually modifying Active Directory.
 
         .EXAMPLE
-            Delegate-UA-Reset-Password -role_name 'Helpdesk_Tier2' -ou 'OU=Standard Users,DC=contoso,DC=com'
+            Delegate-UA-Delete -role_name 'Helpdesk_Tier2' -ou 'OU=Standard Users,DC=contoso,DC=com'  
                     
         .LINK
             https://github.com/maxzaikin/Practical-RBAC
             
         .NOTES
-            This function delegates the "Reset Password" extended right to a specified Active Directory role (group) for a specific OU. 
-            It allows members of the role to reset passwords for user objects within the designated OU. 
+            This function delegates the "Delete Child" permission to a specified Active Directory role (group) for a specific OU. 
+            It allows members of the role to delete user objects within the designated OU. 
             The script also adds a note to the role's description field for audit and tracking purposes.
 
             ---------------------
@@ -67,19 +67,16 @@ Function Delegate-UA-Reset-Password
 
         # Get the current date and time.
         $current_date = Get-Date -UFormat "%A %m/%d/%Y %R %Z"
-                     
+                   
         # Initialize a stopwatch to measure the script's execution time.
         $StopWatch = New-Object System.Diagnostics.Stopwatch
         $StopWatch.Start() 
 
         # Create a note to be added to the role's description field.
-        $new_note = "Reset password permissions have been granted to RBAC role $($role_name) and delegated to OU=$($ou). Operator: $($current_user), computer: $($computerName). Date:$($current_date)"        
+        $new_note = "Delete child object permissions have been granted to RBAC role $($role_name) and delegated to OU=$($ou). Operator: $($current_user), computer: $($computerName). Date:$($current_date)"        
                                          
         # Define the GUID for the user object class in Active Directory.
         $AD_CLASS_USER_OBJECT = [GUID]"bf967aba-0de6-11d0-a285-00aa003049e2"  
-
-        # Define the GUID for the "Reset Password" extended right.
-        $AD_RIGHTS_PASSWORD_RESET = [GUID]"00299570-246D-11D0-A768-00AA006E0529"
                 
         # Get the security identifier (SID) of the specified role (group).
         $ACE_TRUSTEE = New-Object System.Security.Principal.SecurityIdentifier (Get-ADGroup $role_name).SID
@@ -90,14 +87,14 @@ Function Delegate-UA-Reset-Password
         # Get the access control list (ACL) of the OU.
         $ou_acl = Get-ACL -Path ("AD:" + $ou_obj.DistinguishedName)
         
-        # Define the permission type: ExtendedRight for "Reset Password".
-        $ExtendedPermission = [System.DirectoryServices.ActiveDirectoryRights]::ExtendedRight 
+        # Define the permission to be granted: Delete Child.
+        $DeleteChildPermission = [System.DirectoryServices.ActiveDirectoryRights]::DeleteChild 
 
         # Define the access control type: Allow.
         $AccessControlAllow = [System.Security.AccessControl.AccessControlType]::Allow  
 
-        # Define the inheritance flag: Apply to self and child objects.
-        $SelfAndChildren = ([DirectoryServices.ActiveDirectorySecurityInheritance]::SelfAndChildren)           
+        # Define the inheritance flag: No inheritance.
+        $NoInheritance = [DirectoryServices.ActiveDirectorySecurityInheritance]::None           
     }    
     PROCESS {
         try
@@ -105,11 +102,11 @@ Function Delegate-UA-Reset-Password
             # Check if the WhatIf parameter is specified.
             if ($WhatIf) {
                 Write-Verbose "Simulating changes..."
-                Write-Verbose "$($ou_acl).AddAccessRule((New-Object System.DirectoryServices.ActiveDirectoryAccessRule $($ACE_TRUSTEE), 
-                                                                                                                       $($ExtendedPermission), 
-                                                                                                                       $($AccessControlAllow), 
-                                                                                                                       $($AD_RIGHTS_PASSWORD_RESET.Guid), 
-                                                                                                                       $($SelfAndChildren),
+                Write-Verbose "$($ou_acl).AddAccessRule((New-Object System.DirectoryServices.ActiveDirectoryAccessRule $($ACE_TRUSTEE),
+                                                                                                                       $($DeleteChildPermission),
+                                                                                                                       $($AccessControlAllow),
+                                                                                                                       $($AD_CLASS_USER_OBJECT.Guid),
+                                                                                                                       $($NoInheritance),
                                                                                                                        $($AD_CLASS_USER_OBJECT.Guid)))"  
 
                 # Get the current notes from the role's description field.
@@ -120,12 +117,12 @@ Function Delegate-UA-Reset-Password
             }
             else {
             
-                # Create a new access rule granting the role permission to reset passwords.
-                $ou_acl.AddAccessRule((New-Object System.DirectoryServices.ActiveDirectoryAccessRule $ACE_TRUSTEE, 
-                                                                                                     $ExtendedPermission, 
-                                                                                                     $AccessControlAllow, 
-                                                                                                     $AD_RIGHTS_PASSWORD_RESET.Guid, 
-                                                                                                     $SelfAndChildren,
+                # Create a new access rule granting the role permission to delete child objects.
+                $ou_acl.AddAccessRule((New-Object System.DirectoryServices.ActiveDirectoryAccessRule $ACE_TRUSTEE,
+                                                                                                     $DeleteChildPermission,
+                                                                                                     $AccessControlAllow,
+                                                                                                     $AD_CLASS_USER_OBJECT.Guid,
+                                                                                                     $NoInheritance,
                                                                                                      $AD_CLASS_USER_OBJECT.Guid))                  
                                                                                                                 
                 # Apply the modified ACL to the OU.
@@ -155,7 +152,7 @@ Function Delegate-UA-Reset-Password
         Write-Output "--------------------------------------"  
 
         # This variable is not defined or used in the script.      
-        # Write-Output "Total:$($acl_counter)"       
+        # Write-Output "Total:$($acl_counter) has been removed from the group $GroupName"       
 
         Write-Output "TOTAL TIME: $($StopWatch.Elapsed.ToString())"
         
