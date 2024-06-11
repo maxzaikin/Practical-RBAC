@@ -8,11 +8,13 @@ This PowerShell script delegates "Create Child" permissions to an Active Directo
 
 This script adds a note to the role's description field for audit and tracking purposes.
 
+## Expected Behaviour
+
+When creating a new user object using this script, Active Directory might display errors related to insufficient permissions to set the password or other attributes. As a result, the newly created account will be disabled. This is expected behavior and is designed to ensure least privilege.
+
 ![Example Error 1](../_assets/ua-err1.png)
 ![Example Error 2](../_assets/ua-err2.png)
 ![Example Error 3](../_assets/ua-err3.png)
-
-When creating a new user object using this script, Active Directory might display errors related to insufficient permissions to set the password or other attributes. As a result, the newly created account will be disabled. This is expected behavior and is designed to ensure least privilege.
 
 If this is the only role granted to a group, those users will only be able to create user accounts, but will not have permissions to perform other actions like modifying passwords or attributes. This effectively limits the potential impact of compromised accounts, as they are restricted to the most basic actions.
 
