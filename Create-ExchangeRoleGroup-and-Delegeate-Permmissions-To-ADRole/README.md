@@ -32,7 +32,7 @@ Get-ManagementRoleEntry "[Exchange role]\*" | Format-Table -Property Name -Wrap 
 
 ## Things to consider
 
-You man want to restrict WEB access to EAC for specific IP's. Here is how you do it:
+You may want to restrict WEB access to EAC for specific IP's. Here is how you do it:
 
 ```powershell
 # Create a custom management scope for IP restriction
