@@ -18,7 +18,6 @@
             20240216 M. Zaikin
             [+] Release
 
-            Email: mvzaikin@sakhalin-1.com
 
         [-------------------------------------DISCLAIMER-------------------------------------]
         All scripts are provided as-is with no implicit warranty or support. It's always considered a best practice to test scripts in a DEV/TEST environment before running them in production. 
