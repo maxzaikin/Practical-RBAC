@@ -12,9 +12,7 @@
 
         .LINK
         .NOTES
-            Original script located here:
-                I:\Organization\ISD\00_ОФ\03. База знаний\1. Инструментарий\Provisioning-New-Role.ps1
-
+           
             20240216 M. Zaikin
             [+] Release
 
