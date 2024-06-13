@@ -1,4 +1,5 @@
-﻿Function Delegate-UA-Edit-Personal-Information {
+﻿Function Delegate-UA-Edit-Personal-Information
+{
     <#
         .SYNOPSIS
             Delegates "Edit Basic User Attributes such as personal information" permissions to an Active Directory group.
