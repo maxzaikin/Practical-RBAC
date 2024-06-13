@@ -1,4 +1,5 @@
-﻿Function Delegate-UA-Enable-Disable {
+﻿Function Delegate-UA-Enable-Disable 
+{
     <#
         .SYNOPSIS
             Delegates "Enable/Disable User Account" permissions to an Active Directory group.
