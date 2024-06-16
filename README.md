@@ -12,6 +12,10 @@ RBAC is a security principle that grants users access to resources based on thei
 
 This repository focuses on practical implementation using PowerShell scripts and examples for Active Directory.
 
+**More about RBAC you can find in my article published on Linkedin:**
+
+- [Building a Secure Access Control Matrix: Best Practices for Active Directory](https://www.linkedin.com/pulse/building-secure-access-control-matrix-best-practices-active-zaikin-7gr4e)
+> 
 ## Contents
 
 * **Scripts:**
