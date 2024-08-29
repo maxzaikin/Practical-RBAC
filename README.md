@@ -15,12 +15,32 @@ This repository focuses on practical implementation using PowerShell scripts and
 **More about RBAC you can find in my article published on Linkedin:**
 
 - [Building a Secure Access Control Matrix: Best Practices for Active Directory](https://www.linkedin.com/pulse/building-secure-access-control-matrix-best-practices-active-zaikin-7gr4e)
-> 
+>
 ## Contents
 
+* **Docs:**
+    * [`AD Attributes`](https://github.com/maxzaikin/Practical-RBAC/blob/main/AD%20Attributes/AD%20Attributes.md): List of AD Attributes and it GUIDs  
 * **Scripts:**
-    * `Delegate-UA-Create.ps1`: Delegates Dx4 permissions to create child objects to an RBAC role.
+    * [`Create-ExchangeRoleGroup-and-Delegeate-Permmissions-To-ADRole.ps1`](https://github.com/maxzaikin/Practical-RBAC/blob/main/Create-ExchangeRoleGroup-and-Delegeate-Permmissions-To-ADRole/Create-ExchangeRoleGroup-and-Delegeate-Permmissions-To-ADRole.ps1): to be add.
     * *[Add more scripts as you develop them]*
+    * [`Delegate-UA-Create`](https://github.com/maxzaikin/Practical-RBAC/blob/main/Delegate-UA-Create/Delegate-UA-Create.ps1): to be add.
+    * [`Delegate-UA-Delete`](https://github.com/maxzaikin/Practical-RBAC/blob/main/Delegate-UA-Delete/Delegate-UA-Delete.ps1): to be add.
+    * [`Delegate-UA-Edit-DisplayName.ps1`](https://github.com/maxzaikin/Practical-RBAC/blob/main/Delegate-UA-Edit-DisplayName/Delegate-UA-Edit-DisplayName.ps1): to be add.
+    * [`Delegate-UA-Edit-EmployeeType.ps1`](https://github.com/maxzaikin/Practical-RBAC/blob/main/Delegate-UA-Edit-EmployeeType/Delegate-UA-Edit-EmployeeType.ps1): to be add.
+    * [`Delegate-UA-Edit-ExtendedAttr7.ps1`](https://github.com/maxzaikin/Practical-RBAC/blob/main/Delegate-UA-Edit-ExtendedAttrib/Delegate-UA-Edit-ExtendedAttr7.ps1): to be add.
+    * [`Delegate-UA-Edit-HomeDirectory.ps1`](https://github.com/maxzaikin/Practical-RBAC/blob/main/Delegate-UA-Edit-HomeDirectory/Delegate-UA-Edit-HomeDirectory.ps1): to be add.
+    * [`Delegate-UA-Edit-Personal-Information.ps1`](https://github.com/maxzaikin/Practical-RBAC/blob/main/Delegate-UA-Edit-Personal-Information/Delegate-UA-Edit-Personal-Information.ps1): to be add.
+    * [`Delegate-UA-Edit-Public-Information.ps1`](https://github.com/maxzaikin/Practical-RBAC/blob/main/Delegate-UA-Edit-Public-Information/Delegate-UA-Edit-Public-Information.ps1): to be add.
+    * [`Delegate-UA-Enable-Disable.ps1`](https://github.com/maxzaikin/Practical-RBAC/blob/main/Delegate-UA-Enable-Disable/Delegate-UA-Enable-Disable.ps1): to be add.
+    * [`Delegate-UA-Group-Membership-Management.ps1`](https://github.com/maxzaikin/Practical-RBAC/blob/main/Delegate-UA-Group-Membership-Management/Delegate-UA-Group-Membership-Management.ps1): to be add.
+    * [`Delegate-UA-Lock-Unlock.ps1`](https://github.com/maxzaikin/Practical-RBAC/blob/main/Delegate-UA-Lock-Unlock/Delegate-UA-Lock-Unlock.ps1): to be add.
+    * [`Delegate-UA-Reset-Password.ps1`](https://github.com/maxzaikin/Practical-RBAC/blob/main/Delegate-UA-Reset-Password/Delegate-UA-Reset-Password.ps1): to be add.
+    * [`Delegate-UA-Restrictions.ps1`](https://github.com/maxzaikin/Practical-RBAC/blob/main/Delegate-UA-Restrictions/Delegate-UA-Restrictions.ps1): to be add.
+    * [`Provisioning-New-Role.ps1`](https://github.com/maxzaikin/Practical-RBAC/blob/main/Provisioning-New-Role/Provisioning-New-Role.ps1): to be add.
+    * [`Configure-Network-Folder-Access-Groups.ps1`](https://github.com/maxzaikin/Practical-RBAC/blob/main/Shared-Folders-Access-Management/Configure-Network-Folder-Access-Groups.ps1): to be add.
+    * [`Create-Network-Folder-Access-Management-Group.ps1`](https://github.com/maxzaikin/Practical-RBAC/blob/main/Shared-Folders-Access-Management/Create-Network-Folder-Access-Management-Group.ps1): to be add.
+    * [`Delegate-Group-Membership-Management.ps1`](https://github.com/maxzaikin/Practical-RBAC/blob/main/Shared-Folders-Access-Management/Delegate-Group-Membership-Management.ps1): to be add.
+    * [`Scan-FolderPermissions.ps1`](https://github.com/maxzaikin/Practical-RBAC/blob/main/Shared-Folders-Access-Management/Scan-FolderPermissions.ps1): to be add.
 * **Examples:**
     * *[Add examples of how to use the scripts in different scenarios]*
 * **Documentation:**
