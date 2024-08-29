@@ -50,31 +50,26 @@ This repository focuses on practical implementation using PowerShell scripts and
     To understand RBAC and its principles in more deep, please refer to the official guidelines provided by NIST. [Their publications detail the essential elements of RBAC](https://csrc.nist.gov/projects/role-based-access-control), including user-role and permission-role assignments, role hierarchies, and the concept of Separation of Duties (SoD).
 
     **Key RBAC Concepts**
-        1. Role: A collection of permissions that define what actions users assigned to that role can perform.
-
-        2. User: A person or system that is assigned one or more roles, inheriting the permissions associated with those roles.
-
-        3. Permission: The ability to perform specific actions on resources (e.g., read, write, delete). Permissions are granted to roles, not directly to users.
-
-        4. Resources: The systems, data, or applications that users need access to (e.g., network shares, databases, application features).
-
-        5. Role Hierarchies: In complex organizations, roles may be organized hierarchically. Higher roles inherit the permissions of the roles below them.
+      1. Role: A collection of permissions that define what actions users assigned to that role can perform.
+      2. User: A person or system that is assigned one or more roles, inheriting the permissions associated with those roles.
+      3. Permission: The ability to perform specific actions on resources (e.g., read, write, delete). Permissions are granted to roles, not directly to users.
+      4. Resources: The systems, data, or applications that users need access to (e.g., network shares, databases, application features).
+      5. Role Hierarchies: In complex organizations, roles may be organized hierarchically. Higher roles inherit the permissions of the roles below them.
 
     **Benefits of RBAC**
-        6. Scalability: By grouping permissions into roles, it's easier to manage large numbers of users.
-        7. Least Privilege: Users are given only the access they need to perform their job, reducing security risks.
-        8. Auditing: It's easier to review and manage who has access to what resources since permissions are tied to roles, not individuals.
-        9. Compliance: RBAC can help meet regulatory requirements by enforcing separation of duties and least privilege policies.
+      1. Scalability: By grouping permissions into roles, it's easier to manage large numbers of users.
+      2. Least Privilege: Users are given only the access they need to perform their job, reducing security risks.
+      3. Auditing: It's easier to review and manage who has access to what resources since permissions are tied to roles, not individuals.
+      4. Compliance: RBAC can help meet regulatory requirements by enforcing separation of duties and least privilege policies.
 
     **RBAC Best Practices**
-
-        10. Design Accecc Controll Matrix: The access controll matrix will help you to persue many positive initiatives such that documenting your Organization access role model, periodically audit permissions, and documenting permission granularity.
-        11. Define Roles Based on Business Functions: Roles should be based on actual business needs and job functions. 
-        12. Least Privilege: Assign users the minimum permissions they need to perform their job. Avoid creating overly broad or generalized roles like "admin".
-        13. Review and Audit Regularly: Regularly audit role assignments to ensure users no longer have access to resources they don't need. This is critical after employee role changes or departures.
-        14. Segregation of Duties (SoD): Ensure roles are segregated to prevent conflicts of interest. 
-        15. Automate Role Assignments: Use scripts and tools to automate the assignment and revocation of roles as users join, leave, or change positions within the organization.
-        16. Limit Role Overlap: One User account should ideally be assigned a single role that encompasses it needs. Assigning multiple roles to a one user account can lead to conflicts and excessive permissions.
+      1.  Design Accecc Controll Matrix: The access controll matrix will help you to persue many positive initiatives such that documenting your Organization access role model, periodically audit permissions, and documenting permission granularity.
+      2.  Define Roles Based on Business Functions: Roles should be based on actual business needs and job functions. 
+      3.  Least Privilege: Assign users the minimum permissions they need to perform their job. Avoid creating overly broad or generalized roles like "admin".
+      4.  Review and Audit Regularly: Regularly audit role assignments to ensure users no longer have access to resources they don't need. This is critical after employee role changes or departures.
+      5.  Segregation of Duties (SoD): Ensure roles are segregated to prevent conflicts of interest. 
+      6.  Automate Role Assignments: Use scripts and tools to automate the assignment and revocation of roles as users join, leave, or change positions within the organization.
+      7.  Limit Role Overlap: One User account should ideally be assigned a single role that encompasses it needs. Assigning multiple roles to a one user account can lead to conflicts and excessive permissions.
 
 ## Getting Started
 
