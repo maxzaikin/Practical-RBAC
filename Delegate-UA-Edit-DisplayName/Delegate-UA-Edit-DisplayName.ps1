@@ -23,8 +23,8 @@ Function Delegate-UA-Edit-DisplayName
 
             ---------------------
                Version: 1.0
-               Author:  Your Name
-               Date:    2024-XX-XX
+               Author:  M. Zaikin
+               Date:    2024-08-29
                
         [-------------------------------------DISCLAIMER-------------------------------------]
         This script is provided "AS IS" without warranty of any kind, express or implied, including but not limited to the warranties of 
