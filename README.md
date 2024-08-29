@@ -20,6 +20,7 @@ This repository focuses on practical implementation using PowerShell scripts and
 
 * **Docs:**
     * [`AD Attributes`](https://github.com/maxzaikin/Practical-RBAC/blob/main/AD%20Attributes/AD%20Attributes.md): List of AD Attributes and it GUIDs  
+  
 * **Scripts:**
     * [`Create-ExchangeRoleGroup-and-Delegeate-Permmissions-To-ADRole.ps1`](https://github.com/maxzaikin/Practical-RBAC/blob/main/Create-ExchangeRoleGroup-and-Delegeate-Permmissions-To-ADRole/Create-ExchangeRoleGroup-and-Delegeate-Permmissions-To-ADRole.ps1):
     * [`Delegate-UA-Create`](https://github.com/maxzaikin/Practical-RBAC/blob/main/Delegate-UA-Create/Delegate-UA-Create.ps1):
@@ -40,10 +41,40 @@ This repository focuses on practical implementation using PowerShell scripts and
     * [`Create-Network-Folder-Access-Management-Group.ps1`](https://github.com/maxzaikin/Practical-RBAC/blob/main/Shared-Folders-Access-Management/Create-Network-Folder-Access-Management-Group.ps1):
     * [`Delegate-Group-Membership-Management.ps1`](https://github.com/maxzaikin/Practical-RBAC/blob/main/Shared-Folders-Access-Management/Delegate-Group-Membership-Management.ps1):
     * [`Scan-FolderPermissions.ps1`](https://github.com/maxzaikin/Practical-RBAC/blob/main/Shared-Folders-Access-Management/Scan-FolderPermissions.ps1):
+  
 * **Examples:**
-    * *[Add examples of how to use the scripts in different scenarios]*
+    * Each scrip support with the example section.
+  
 * **Documentation:**
-    * *[Add documentation explaining RBAC concepts, best practices, and how to use the scripts effectively]*
+    * Role-Based Access Control (RBAC) is a security model that restricts system access based on the roles taht users holds within an organization. Instead of giving users individual permissions, RBAC assigns permissions to roles, and users are assigned one or more roles. This structure makes managing access to resources more efficient and scalable.
+    To understand RBAC and its principles in more deep, please refer to the official guidelines provided by NIST. [Their publications detail the essential elements of RBAC](https://csrc.nist.gov/projects/role-based-access-control), including user-role and permission-role assignments, role hierarchies, and the concept of Separation of Duties (SoD).
+
+    **Key RBAC Concepts**
+        1. Role: A collection of permissions that define what actions users assigned to that role can perform.
+
+        2. User: A person or system that is assigned one or more roles, inheriting the permissions associated with those roles.
+
+        3. Permission: The ability to perform specific actions on resources (e.g., read, write, delete). Permissions are granted to roles, not directly to users.
+
+        4. Resources: The systems, data, or applications that users need access to (e.g., network shares, databases, application features).
+
+        5. Role Hierarchies: In complex organizations, roles may be organized hierarchically. Higher roles inherit the permissions of the roles below them.
+
+    **Benefits of RBAC**
+        6. Scalability: By grouping permissions into roles, it's easier to manage large numbers of users.
+        7. Least Privilege: Users are given only the access they need to perform their job, reducing security risks.
+        8. Auditing: It's easier to review and manage who has access to what resources since permissions are tied to roles, not individuals.
+        9. Compliance: RBAC can help meet regulatory requirements by enforcing separation of duties and least privilege policies.
+
+    **RBAC Best Practices**
+
+        10. Design Accecc Controll Matrix: The access controll matrix will help you to persue many positive initiatives such that documenting your Organization access role model, periodically audit permissions, and documenting permission granularity.
+        11. Define Roles Based on Business Functions: Roles should be based on actual business needs and job functions. 
+        12. Least Privilege: Assign users the minimum permissions they need to perform their job. Avoid creating overly broad or generalized roles like "admin".
+        13. Review and Audit Regularly: Regularly audit role assignments to ensure users no longer have access to resources they don't need. This is critical after employee role changes or departures.
+        14. Segregation of Duties (SoD): Ensure roles are segregated to prevent conflicts of interest. 
+        15. Automate Role Assignments: Use scripts and tools to automate the assignment and revocation of roles as users join, leave, or change positions within the organization.
+        16. Limit Role Overlap: One User account should ideally be assigned a single role that encompasses it needs. Assigning multiple roles to a one user account can lead to conflicts and excessive permissions.
 
 ## Getting Started
 
