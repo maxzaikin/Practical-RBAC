@@ -135,6 +135,6 @@
         $LogList.Add($LogObject) | Out-Null
         $LogList | Export-Csv -Path $output_path -Encoding UTF8 -Delimiter ";"
         Write-Output "Log saved to $output_path"
-        Write-Output "Send log to ISD@s1.rosneft.ru"
+        Write-Output "Send log to your@email.com"
     }   
 }
